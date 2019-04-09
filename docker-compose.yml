@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  valley:
+    build: .
+    ports:
+      - 5902:5900
+    volumes:
+      - /data/valley:/data
+      - ./init.sh:/init.sh
+      # - ./asound.conf:/etc/asound.conf
+      - ./config:/root/.config/i3/config
+    devices:
+      - /dev/dsp:/dev/dsp
+      - /dev/snd:/dev/snd
+    entrypoint:
+      - /bin/sh
+      - /init.sh
+      
