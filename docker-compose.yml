@@ -5,11 +5,13 @@ services:
     build: .
     ports:
       - 5902:5900
+      - 24642:24642
     volumes:
       - /data/valley:/data
       - ./init.sh:/init.sh
       # - ./asound.conf:/etc/asound.conf
       - ./config:/root/.config/i3/config
+      - /data/valley_saves:/root/.config/StardewValley/Saves/
     devices:
       - /dev/dsp:/dev/dsp
       - /dev/snd:/dev/snd
