@@ -1,21 +1,23 @@
-version: '3.7'
+version: '2.2'
 
 services:
   valley:
     build: .
     ports:
       - 5902:5900
-      - 24642:24642
+      - 24642:24642/udp
     volumes:
       - /data/valley:/data
       - ./init.sh:/init.sh
-      # - ./asound.conf:/etc/asound.conf
+      - ./asound.conf:/etc/asound.conf
       - ./config:/root/.config/i3/config
       - /data/valley_saves:/root/.config/StardewValley/Saves/
     devices:
-      - /dev/dsp:/dev/dsp
+      #- /dev/dsp:/dev/dsp
       - /dev/snd:/dev/snd
     entrypoint:
       - /bin/sh
       - /init.sh
+    cpus: 0.5
+    cpuset: '2'
       

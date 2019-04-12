@@ -1,0 +1,10 @@
+---
+
+- name: Example
+  hosts: "all"
+  become: true
+
+  roles:
+    - role: "nickjj.docker"
+      tags: ["docker"]
+    - role  "stardew"
