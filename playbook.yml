@@ -1,10 +1,44 @@
 ---
 
-- name: Example
+- name: Stardew
   hosts: "all"
   become: true
 
   roles:
     - role: "nickjj.docker"
       tags: ["docker"]
-    - role  "stardew"
+
+  tasks:
+    - name: Creates directory
+      file:
+        path: /var/docker/stardew
+        state: directory
+    - name: "Copy Shit over"
+      copy:
+        src: ./docker-compose.yml
+        dest: /var/docker/stardew/docker-compose.yml
+    - name: "Copy Shit over"
+      copy:
+        src: ./asound.conf
+        dest: /var/docker/stardew/asound.conf
+    - name: "Copy Shit over"
+      copy:
+        src: ./init.sh
+        dest: /var/docker/stardew/init.sh
+    - name: "Copy Shit over"
+      copy:
+        src: ./Dockerfile
+        dest: /var/docker/stardew/Dockerfile
+    - name: "Copy Shit over"
+      copy:
+        src: ./config
+        dest: /var/docker/stardew/config
+    - name: Pip install docker for Ansible's docker_login and docker_service modules
+      pip:
+        name: ["docker", "docker-compose"]
+    - name: "Start docker-compose"
+      docker_service:
+        project_src: "/var/docker/stardew"
+        pull: yes
+
+

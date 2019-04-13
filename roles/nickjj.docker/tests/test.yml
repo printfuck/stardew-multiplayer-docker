@@ -1,0 +1,41 @@
+---
+
+- hosts: "all"
+  become: true
+
+  vars:
+    docker__version: "18.06"
+
+    docker__users: ["test"]
+
+    docker__daemon_json: |
+      "dns": ["8.8.8.8"]
+
+    docker__daemon_environment:
+      - "HTTP_PROXY=http://proxy.a.com:80"
+      - "HTTPS_PROXY=https://proxy.a.com:443"
+
+    docker__daemon_flags:
+      - "-H fd://"
+      - "--debug"
+
+    docker__systemd_override: |
+      [Unit]
+      Invalid=Directive
+
+      [Service]
+      ThisIsJust=ATest
+
+  roles:
+    - role: "role_under_test"
+
+  pre_tasks:
+    - name: Add test user
+      user:
+        name: "test"
+        shell: "/bin/bash"
+
+    - name: Run the equivalent of "apt-get update"
+      apt:
+        update_cache: true
+      changed_when: false

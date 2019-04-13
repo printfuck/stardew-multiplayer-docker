@@ -1,0 +1,26 @@
+---
+
+galaxy_info:
+  role_name: "docker"
+  author: "Nick Janetakis"
+  description: "Install and configure Docker / Docker Compose."
+  license: "MIT"
+  min_ansible_version: 2.5
+
+  platforms:
+    - name: "Ubuntu"
+      versions:
+        - "xenial"
+        - "bionic"
+    - name: "Debian"
+      versions:
+        - "stretch"
+
+  galaxy_tags:
+    - "containers"
+    - "compose"
+    - "docker"
+    - "packaging"
+    - "system"
+
+dependencies: []
