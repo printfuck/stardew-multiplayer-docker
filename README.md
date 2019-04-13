@@ -2,12 +2,32 @@
 
 This project aims to autostart a Stardew Valley Multiplayer Server as easy as possible.
 
-## Setup 
+## Setup
+
+### Docker-Compose
+ 
 ```
 git clone https://github.com/printfuck/stardew-multiplayer-docker
 
 docker-compose up
 ```
+### Ansible
+
+Create an inventory file with your hosts
+
+```
+ansible -i <your_inventori> playbook.yml
+```
+
+### Terraform (with Hetzner Cloud)
+
+Enter your API Token in `terraform/vars.auto.tfvars` and run the following script:
+
+```
+./terra.sh
+```
+
+## Game Setup
 
 Intially you have to create or load a game once after first startup. After that the Autoload Mod jump starts into the previously loaded savegame everytime you rerun the container. You can also edit the config file of the Autoload Mod to archieve similar behaviour.
 
