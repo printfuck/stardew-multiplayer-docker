@@ -36,6 +36,6 @@ resource "hcloud_server" "game_node" {
     }
 
     working_dir = "."
-    command     = "ansible-playbook -u root --private-key ./ssh/key ../playbook.yml -i ${self.ipv4_address},"
+    command     = "ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -u root --private-key ./ssh/key ../playbook.yml -i ${self.ipv4_address},"
   }
 }
