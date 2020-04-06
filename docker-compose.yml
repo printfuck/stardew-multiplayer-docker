@@ -7,8 +7,6 @@ services:
       - 5902:5900
       - 24642:24642/udp
     volumes:
-      - ./valley:/data
-      - ./init.sh:/init.sh
       - ./asound.conf:/etc/asound.conf
       - ./config:/root/.config/i3/config
       - ./valley_saves:/root/.config/StardewValley/Saves/
