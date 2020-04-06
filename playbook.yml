@@ -23,12 +23,8 @@
         dest: /var/docker/stardew/asound.conf
     - name: "Copy Shit over"
       copy:
-        src: ./init.sh
-        dest: /var/docker/stardew/init.sh
-    - name: "Copy Shit over"
-      copy:
-        src: ./Dockerfile
-        dest: /var/docker/stardew/Dockerfile
+        src: ./docker
+        dest: /var/docker/stardew/
     - name: "Copy Shit over"
       copy:
         src: ./config
