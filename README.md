@@ -38,3 +38,10 @@ The game, the modloader (SMAPI), and the "Always On" Mod is pulled from my serve
 ## Why Docker
 
 This should be simple and easily deployable, so there are only a few options.
+
+## Used Mods
+
+* [AutoLoadGame](https://www.nexusmods.com/stardewvalley/mods/2509)
+* [Always On](https://community.playstarbound.com/threads/updating-mods-for-stardew-valley-1-4.156000/page-20#post-3353880)
+* [Unlimited Players](https://www.nexusmods.com/stardewvalley/mods/2213)
+
