@@ -3,16 +3,14 @@ version: '2.2'
 services:
   valley:
     build: docker
+    container_name: stardew
     ports:
       - 5902:5900
       - 24642:24642/udp
     volumes:
-      - ./asound.conf:/etc/asound.conf
       - ./config:/root/.config/i3/config
-      - ./valley_saves:/root/.config/StardewValley/Saves/
-      - ./configs/alwayson.json:/data/Stardew/Stardew\ Valley/Mods/Always\ On\ Server/config.json
-      - ./configs/unlimitedplayers.json:/data/Stardew/Stardew\ Valley/Mods/UnlimitedPlayers/config.json
-      - ./configs/autoload.json:/data/Stardew/Stardew\ Valley/Mods/AutoLoadGame/config.json
-    devices:
-      - /dev/snd:/dev/snd
+      - ./valley_saves:/home/nya/.config/StardewValley/Saves/
+      - ./configs/alwayson.json:/data/Stardew/Stardew Valley/Mods/Always On Server/config.json
+      - ./configs/unlimitedplayers.json:/data/Stardew/Stardew Valley/Mods/UnlimitedPlayers/config.json
+      - ./configs/autoload.json:/data/Stardew/Stardew Valley/Mods/AutoLoadGame/config.json
       
