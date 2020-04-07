@@ -27,6 +27,10 @@
         dest: /var/docker/stardew/
     - name: "Copy Shit over"
       copy:
+        src: ./configs
+        dest: /var/docker/stardew/configs
+    - name: "Copy Shit over"
+      copy:
         src: ./config
         dest: /var/docker/stardew/config
     - name: Pip install docker for Ansible's docker_login and docker_service modules
