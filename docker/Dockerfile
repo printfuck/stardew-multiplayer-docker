@@ -17,7 +17,6 @@ RUN mkdir -p /data/Stardew && \
 COPY mods/alwayson.zip /data/alwayson.zip
 COPY mods/unlimitedplayers.zip /data/unlimitedplayers.zip
 COPY mods/autoloadgame.zip /data/autoloadgame.zip
-COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN unzip /data/alwayson.zip -d /data/Stardew/Stardew\ Valley/Mods && \
     unzip /data/unlimitedplayers.zip -d /data/Stardew/Stardew\ Valley/Mods && \
@@ -25,4 +24,5 @@ RUN unzip /data/alwayson.zip -d /data/Stardew/Stardew\ Valley/Mods && \
     rm /data/alwayson.zip /data/unlimitedplayers.zip /data/autoloadgame.zip
 
 
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
