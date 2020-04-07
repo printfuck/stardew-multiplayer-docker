@@ -21,7 +21,7 @@ ansible -i <your_inventori> playbook.yml
 
 ### Terraform (with Hetzner Cloud)
 
-Enter your API Token in `terraform/vars.auto.tfvars` and run the following script:
+Enter your API Token in `terraform/vars.auto.tfvars` and  the resource section in `main.tf` run the following script:
 
 ```
 ./terra.sh
@@ -33,7 +33,7 @@ Intially you have to create or load a game once after first startup. After that 
 
 ## How it works
 
-The game, the modloader (SMAPI), and the "Always On" Mod is pulled from my servers to minimize version conflicts. Afterwards everything will be unpacked into the right places. In the end of the init script the game will be started inside Xvfb.
+The game, the modloader (SMAPI), and the "Always On" Mod is pulled from my servers (I'll assume you already own the game - since you're looking for a multiplayer - so please don't rip it from there) to minimize version conflicts. Afterwards everything will be unpacked into the right places. The `docker-entrypoint.sh` script will start `Xvfb` and `x11vnc` before starting the game. You can control the game via vnc with the settings within the `docker-compose.yml` file.
 
 ## Why Docker
 
@@ -49,10 +49,10 @@ This should be simple and easily deployable, so there are only a few options.
 
 ### Error Messages in Console
 
-Usually you should be able to ignore any messages. If the game doesn't start or any errors appear, you should look for message like "cannot open display", whiich would indicate most likely permission errors.
+Usually you should be able to ignore any message there. If the game doesn't start or any errors appear, you should look for messages like "cannot open display", which would most likely indicate permission errors.
 
 ### VNC
 
-Access the game via VNC to initially load or start a pregenerated savegame. You can control the Server from there or edit the config.json files in the configs folder
+Access the game via VNC to initially load or start a pregenerated savegame. You can control the Server from there or edit the config.json files in the configs folder.
 
 
