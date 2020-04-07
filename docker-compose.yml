@@ -2,7 +2,7 @@ version: '2.2'
 
 services:
   valley:
-    build: .
+    build: docker
     ports:
       - 5902:5900
       - 24642:24642/udp
@@ -12,9 +12,4 @@ services:
       - ./valley_saves:/root/.config/StardewValley/Saves/
     devices:
       - /dev/snd:/dev/snd
-    entrypoint:
-      - /bin/sh
-      - /init.sh
-    #cpus: 2
-    #cpuset: 0,1
       
