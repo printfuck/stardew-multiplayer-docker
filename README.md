@@ -45,3 +45,14 @@ This should be simple and easily deployable, so there are only a few options.
 * [Always On](https://community.playstarbound.com/threads/updating-mods-for-stardew-valley-1-4.156000/page-20#post-3353880)
 * [Unlimited Players](https://www.nexusmods.com/stardewvalley/mods/2213)
 
+## Troubleshooting
+
+### Error Messages in Console
+
+Usually you should be able to ignore any messages. If the game doesn't start or any errors appear, you should look for message like "cannot open display", whiich would indicate most likely permission errors.
+
+### VNC
+
+Access the game via VNC to initially load or start a pregenerated savegame. You can control the Server from there or edit the config.json files in the configs folder
+
+
