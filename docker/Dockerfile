@@ -14,12 +14,13 @@ RUN mkdir -p /data/Stardew && \
     /bin/bash -c "echo -e \"2\n/data/Stardew/Stardew\ Valley\n1\n\" | /usr/bin/mono /data/nexus/SMAPI\ 3.4.1\ installer/internal/unix-install.exe"
 
 #mods
-COPY mods/alwayson.zip /data/alwayson.tar
-COPY mods/unlimitedplayers.zip /data/unlimitedplayers.tar
+COPY mods/alwayson.zip /data/alwayson.zip
+COPY mods/unlimitedplayers.zip /data/unlimitedplayers.zip
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN unzip /data/alwayson.zip -d /data/Stardew/Stardew\ Valley/Mods && \
-    unzip /data/unlimitedplayers.zip -d /data/Stardew/Stardew\ Valley/Mods
+    unzip /data/unlimitedplayers.zip -d /data/Stardew/Stardew\ Valley/Mods && \
+    rm /data/alwayson.zip /data/unlimitedplayers.zip
 
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
