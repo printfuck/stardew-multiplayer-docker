@@ -22,7 +22,7 @@ RUN unzip /data/alwayson.zip -d /data/Stardew/Stardew\ Valley/Mods && \
     unzip /data/unlimitedplayers.zip -d /data/Stardew/Stardew\ Valley/Mods && \
     unzip /data/autoloadgame.zip -d /data/Stardew/Stardew\ Valley/Mods && \
     rm /data/alwayson.zip /data/unlimitedplayers.zip /data/autoloadgame.zip
-RUN chown -R 1010:1010 /data && chmod +x /data/Stardew/Stardew\ Valley/StardewValley && useradd -m -u 1010 nya
+RUN chown -R 1010:1010 /data && mkdir -p /home/nya/.config/StardewValley && chown -R 1010:1010 /home/nya/.config/StardewValley/ && chmod +x /data/Stardew/Stardew\ Valley/StardewValley && useradd -m -u 1010 nya
 USER nya
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
