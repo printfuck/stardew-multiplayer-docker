@@ -7,7 +7,7 @@ services:
     environment:
       - VNCPASS=nyanyanya
     ports:
-      - 5902:5900
+      - 5900:5900
       - 24642:24642/udp
     volumes:
       - ./config:/root/.config/i3/config
@@ -15,4 +15,6 @@ services:
       - ./configs/alwayson.json:/data/Stardew/Stardew Valley/Mods/Always On Server/config.json
       - ./configs/unlimitedplayers.json:/data/Stardew/Stardew Valley/Mods/UnlimitedPlayers/config.json
       - ./configs/autoload.json:/data/Stardew/Stardew Valley/Mods/AutoLoadGame/config.json
+      # add another mod
+      # - ./ModFolder:/data/Stardew/Stardew Valley/Mods/ModFolder
       
