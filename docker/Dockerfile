@@ -6,7 +6,7 @@ RUN apt-get install -y wget unzip xvfb x11vnc xterm i3
 # Game + ModLoader
 RUN mkdir -p /data/Stardew && \
     mkdir -p /data/nexus && \
-    wget https://eris.cc/Stardew_latest_1.4.tar.gz -qO /data/latest.tar.gz && \
+    wget https://eris.cc/Stardew_latest.tar.gz -qO /data/latest.tar.gz && \
     tar xf /data/latest.tar.gz -C /data/Stardew && \
     rm /data/latest.tar.gz && \
     wget https://github.com/Pathoschild/SMAPI/releases/download/3.4.1/SMAPI-3.4.1-installer.zip  -qO /data/nexus.zip && \
