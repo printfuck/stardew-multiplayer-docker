@@ -11,7 +11,7 @@ RUN mkdir -p /data/Stardew && \
     rm /data/latest.tar.gz && \
     wget https://github.com/Pathoschild/SMAPI/releases/download/3.8/SMAPI-3.8.0-installer.zip -qO /data/nexus.zip && \
     unzip /data/nexus.zip -d /data/nexus/ && \
-    /bin/bash -c "echo -e \"2\n/data/Stardew/Stardew\ Valley\n1\n\" | /usr/bin/mono /data/nexus/SMAPI\ 3.4.1\ installer/internal/unix-install.exe" 
+    /bin/bash -c "echo -e \"2\n/data/Stardew/Stardew\ Valley\n1\n\" | /usr/bin/mono /data/nexus/SMAPI\ 3.8.0\ installer/internal/unix-install.exe" 
 
 # Add Mods
 COPY mods/alwayson.zip /data/alwayson.zip
