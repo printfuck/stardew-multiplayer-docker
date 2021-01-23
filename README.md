@@ -36,7 +36,7 @@ Enter your API Token in `terraform/vars.auto.tfvars` and modify the resource sec
 
 ## Game Setup
 
-Intially you have to create or load a game once at first startup via VNC or Web interface. After that the Autoload Mod jumps into the previously loaded savegame everytime you rerun the container. You can also edit the config file of the Autoload Mod to archieve similar behaviour.
+Intially you have to create or load a game once via VNC or Web interface. After that the Autoload Mod jumps into the previously loaded savegame everytime you restart or rebuild the container. The AutoLoad Mod config file is by default mounted as a volume, since it keeps the state of the ongoing SaveGame, but you can also copy your existing SaveGame to the `Saves` volume and define the SaveGame's name in the environment variables.
 
 ### VNC
 
@@ -54,11 +54,13 @@ Localhost:
 
 ### Web Interface 
 
-On port 5800 inside the container is a web interface that uses noVNC. This is a bit easier and more accessible than just the vnc interface. Although you will be asked for the vnc password, I wouldn't recommend exposing the the port to the outside world.
+On port 5800 inside the container is a web interface. This is a bit easier and more accessible than just the VNC interface. Although you will be asked for the vnc password, I wouldn't recommend exposing the port to the outside world.
+
+![img](https://store.eris.cc/uploads/859865e1ab5b23fb223923d9a7e4806b.PNG)
 
 ## How it works
 
-The game will be pulled from my servers (I'll assume you already own the game - since you're looking for a multiplayer - so please don't rip it from there) and the modloader (SMAPI) will be pulled from Github when building the container. You can control the mod's settings with environment variables in the `docker-compose.yml` file.
+The game will be pulled from my servers (I'll assume you already own the game - since you're looking for a multiplayer - so please don't rip it from there) and the modloader (SMAPI) will be pulled from Github when building the container. You can control the mods's settings with environment variables in the `docker-compose.yml` file.
 
 ## Used Mods
 
