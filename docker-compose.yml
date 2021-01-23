@@ -7,13 +7,12 @@ services:
     environment:
       - "VNC_PASSWORD=2342"
       - "DISPLAY_HEIGHT=1000"
-      - "DISPLAY_WIDTH=1000"
+      - "DISPLAY_WIDTH=1400"
     ports:
       - 5902:5900
       - 5801:5800
       - 24642:24642/udp
     volumes:
-      - ./config:/root/.config/i3/config
       - ./valley_saves:/root/.config/StardewValley/Saves/
       - ./configs/alwayson.json:/data/Stardew/Stardew Valley/Mods/Always On Server/config.json
       - ./configs/unlimitedplayers.json:/data/Stardew/Stardew Valley/Mods/UnlimitedPlayers/config.json
