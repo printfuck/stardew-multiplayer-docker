@@ -1,0 +1,5 @@
+{
+  "LastFileLoaded": "${AUTO_LOAD_GAME_LAST_FILE_LOADED}",
+  "LoadIntoMultiplayer": ${AUTO_LOAD_GAME_LOAD_INTO_MULTIPLAYER},
+  "ForgetLastFileOnTitle": ${AUTO_LOAD_GAME_FORGET_LAST_FILE_ON_TITLE}
+}

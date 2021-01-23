@@ -1,0 +1,10 @@
+﻿{
+  "Name": "Auto Load Game",
+  "Author": "Caraxian",
+  "Version": "1.0.2",
+  "Description": "Automatically load a save file when starting.",
+  "UniqueID": "caraxian.AutoLoadGame",
+  "EntryDll": "AutoLoadGame.dll",
+  "MinimumApiVersion": "2.10.1",
+  "UpdateKeys": [ "Nexus:2509" ]
+}

@@ -1,0 +1,10 @@
+{
+  "Name": "No Fence Decay",
+  "Author": "Cat",
+  "Version": "1.5.0",
+  "Description": "Makes all fences and gates last forever.",
+  "UniqueID": "cat.nofencedecay",
+  "EntryDll": "NoFenceDecay.dll",
+  "MinimumApiVersion": "2.9.0",
+  "UpdateKeys": [ "Nexus:1180" ]
+}

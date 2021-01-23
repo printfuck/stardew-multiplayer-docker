@@ -1,0 +1,10 @@
+{
+  "Name": "Remote Control",
+  "Author": "Sebbity",
+  "Version": "1.0.0",
+  "Description": "Remotely control a stardew valley host ",
+  "UniqueID": "Sebbity.RemoteControl",
+  "EntryDll": "RemoteControl.dll",
+  "MinimumApiVersion": "2.10.0",
+  "UpdateKeys": [ "GitHub:Novex/StardewValley-RemoteControl"]
+}

@@ -6,6 +6,8 @@ This project aims to autostart a Stardew Valley Multiplayer Server as easy as po
 
  - Updating to most recent version requires a rebuild: `docker-compose build --no-cache` 
  - Although I'm trying to put out updates, I don't have the time for testing, so I recommend forking and fixing things on your own.
+ - Ansible and Terraform will not be supported anymore
+ - Thanks to the brilliant configuration script from Novex and the genius baseimage from jlesage this now looks a bit better
 
 ## Setup
 
@@ -16,7 +18,7 @@ git clone https://github.com/printfuck/stardew-multiplayer-docker
 
 docker-compose up
 ```
-### Ansible
+### Ansible !deprecated!
 
 Create an inventory file with your hosts
 
@@ -24,7 +26,7 @@ Create an inventory file with your hosts
 ansible -i <your_inventori> playbook.yml
 ```
 
-### Terraform (with Hetzner Cloud)
+### Terraform (with Hetzner Cloud) !deprecated!
 
 Enter your API Token in `terraform/vars.auto.tfvars` and modify the resource section in `main.tf` to your liking, then run the following script:
 
@@ -34,7 +36,7 @@ Enter your API Token in `terraform/vars.auto.tfvars` and modify the resource sec
 
 ## Game Setup
 
-Intially you have to create or load a game once at first startup via VNC. After that the Autoload Mod jumps into the previously loaded savegame everytime you rerun the container. You can also edit the config file of the Autoload Mod to archieve similar behaviour.
+Intially you have to create or load a game once at first startup via VNC or Web interface. After that the Autoload Mod jumps into the previously loaded savegame everytime you rerun the container. You can also edit the config file of the Autoload Mod to archieve similar behaviour.
 
 ### VNC
 
@@ -50,15 +52,20 @@ Localhost:
      - VNCPASS=insecure
 ```
 
+### Web Interface 
+
+On port 5800 inside the container is a web interface that uses noVNC. This is a bit easier and more accessible than just the vnc interface. Although you will be asked for the vnc password, I wouldn't recommend exposing the the port to the outside world.
+
 ## How it works
 
-The game, the modloader (SMAPI), and the necessary Mods are pulled from my servers (I'll assume you already own the game - since you're looking for a multiplayer - so please don't rip it from there) to minimize version conflicts. The `docker-entrypoint.sh` script will start `Xvfb` and `x11vnc` before starting the game. You can control the game via vnc with the settings within the `docker-compose.yml` file.
+The game will be pulled from my servers (I'll assume you already own the game - since you're looking for a multiplayer - so please don't rip it from there) and the modloader (SMAPI) will be pulled from Github when building the container. You can control the mod's settings with environment variables in the `docker-compose.yml` file.
 
 ## Used Mods
 
 * [AutoLoadGame](https://www.nexusmods.com/stardewvalley/mods/2509)
 * [Always On](https://community.playstarbound.com/threads/updating-mods-for-stardew-valley-1-4.156000/page-20#post-3353880)
 * [Unlimited Players](https://www.nexusmods.com/stardewvalley/mods/2213)
+* some more ...
 
 ## Troubleshooting
 

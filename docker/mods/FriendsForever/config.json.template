@@ -1,0 +1,6 @@
+﻿{
+  "AffectSpouses": ${FRIENDS_FOREVER_AFFECT_SPOUSE},
+  "AffectDates": ${FRIENDS_FOREVER_AFFECT_DATES},
+  "AffectEveryoneElse": ${FRIENDS_FOREVER_AFFECT_EVERYONE_ELSE},
+  "AffectAnimals": ${FRIENDS_FOREVER_AFFECT_ANIMALS}
+}

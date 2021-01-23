@@ -1,0 +1,10 @@
+﻿{
+  "Name": "Chat Commands",
+  "Author": "Cat",
+  "Version": "1.14.0",
+  "Description": "Lets you run SMAPI commands from the chat window!",
+  "UniqueID": "cat.chatcommands",
+  "EntryDll": "ChatCommands.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": [ "Nexus:2092" ]
+}

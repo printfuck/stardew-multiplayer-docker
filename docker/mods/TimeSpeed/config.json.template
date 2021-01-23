@@ -1,0 +1,19 @@
+{
+    "DefaultTickLength": ${TIME_SPEED_DEFAULT_TICK_LENGTH},
+    "TickLengthByLocation": {
+      "Indoors": ${TIME_SPEED_TICK_LENGTH_BY_LOCATION_INDOORS},
+      "Outdoors": ${TIME_SPEED_TICK_LENGTH_BY_LOCATION_OUTDOORS},
+      "Mine": ${TIME_SPEED_TICK_LENGTH_BY_LOCATION_MINE}
+    },
+
+    "EnableOnFestivalDays": ${TIME_SPEED_ENABLE_ON_FESTIVAL_DAYS},
+    "FreezeTimeAt": ${TIME_SPEED_FREEZE_TIME_AT},
+    "LocationNotify": ${TIME_SPEED_LOCATION_NOTIFY},
+
+    "Keys": {
+      "FreezeTime": "${TIME_SPEED_KEYS_FREEZE_TIME}",
+      "IncreaseTickInterval": "${TIME_SPEED_KEYS_INCREASE_TICK_INTERVAL}",
+      "DecreaseTickInterval": "${TIME_SPEED_KEYS_DECREASE_TICK_INTERVAL}",
+      "ReloadConfig": "${TIME_SPEED_KEYS_RELOAD_CONFIG}"
+    }
+  }

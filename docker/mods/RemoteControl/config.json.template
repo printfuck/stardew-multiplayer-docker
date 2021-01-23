@@ -1,0 +1,5 @@
+{
+  "everyoneIsAdmin": ${REMOTE_CONTROL_EVERYONE_IS_ADMIN},
+  "admins": [],
+  "shouldAssignAdminToFirstCabinFarmer": ${REMOTE_CONTROL_SHOULD_ASSIGN_ADMIN_TO_FIRST_CABIN_FARMER}
+}

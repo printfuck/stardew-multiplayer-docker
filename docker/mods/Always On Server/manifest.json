@@ -1,0 +1,10 @@
+{
+  "Name": "Always On Server",
+  "Author": "funny-snek & Zuberii",
+  "Version": "1.20.2-unofficial.1-slamerz",
+  "Description": "A Headless server mod.",
+  "UniqueID": "funny-snek.Always_On_Server",
+  "EntryDll": "Always On Server.dll",
+  "MinimumApiVersion": "3.0.0",
+  "UpdateKeys": [ "Nexus:2677" ]
+}
