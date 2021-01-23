@@ -3,7 +3,7 @@ FROM mono:latest
 RUN apt-get update
 RUN apt-get install -y wget unzip xvfb x11vnc xterm i3
 
-# Game + ModLoader
+# Game + ModLoader 1.5.4 3.8.3
 RUN mkdir -p /data/Stardew && \
     mkdir -p /data/nexus && \
     wget https://eris.cc/Stardew_latest.tar.gz -qO /data/latest.tar.gz && \
