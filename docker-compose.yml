@@ -5,9 +5,12 @@ services:
     build: docker
     container_name: stardew
     environment:
-      - VNCPASS=nyanyanya
+      - "VNC_PASSWORD=2342"
+      - "DISPLAY_HEIGHT=1000"
+      - "DISPLAY_WIDTH=1000"
     ports:
-      - 5900:5900
+      - 5902:5900
+      - 5801:5800
       - 24642:24642/udp
     volumes:
       - ./config:/root/.config/i3/config
