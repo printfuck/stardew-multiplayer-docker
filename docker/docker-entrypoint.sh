@@ -30,10 +30,11 @@ done
 
 /opt/tail-smapi-log.sh &
 
-# Try fixing Backup Permissions
-chmod -R 777 /data/Stardew/Stardew\ Valley/save-backups
-
 # Ready to start!
-/data/Stardew/Stardew\ Valley/StardewValley
 
-sleep 233
+export XAUTHORITY=~/.Xauthority
+TERM=xterm
+
+strace /data/Stardew/Stardew\ Valley/StardewValley
+
+sleep 233333333333333

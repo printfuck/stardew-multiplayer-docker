@@ -16,7 +16,8 @@ ENV APP_NAME="StardewValley"
 
 RUN apt-get update
 #RUN apt-get install -y wget unzip xvfb x11vnc xterm i3
-RUN apt-get install -y wget unzip tar
+RUN apt-get install -y wget unzip tar strace mono-complete xterm
+RUN apt-get install -y gettext-base jq netcat procps 
 
 # Game + ModLoader 1.5.4 3.8.3
 RUN mkdir -p /data/Stardew && \
@@ -25,13 +26,10 @@ RUN mkdir -p /data/Stardew && \
     tar xf /data/latest.tar.gz -C /data/Stardew && \
     rm /data/latest.tar.gz 
 
-RUN apt-get install -y mono-complete
-
 RUN wget https://github.com/Pathoschild/SMAPI/releases/download/3.9.0/SMAPI-3.9.0-installer.zip -qO /data/nexus.zip && \
     unzip /data/nexus.zip -d /data/nexus/ && \
     /bin/bash -c "echo -e \"2\n/data/Stardew/Stardew\ Valley\n1\n\" | /usr/bin/mono /data/nexus/SMAPI\ 3.9.0\ installer/internal/unix-install.exe" 
 
-RUN apt-get install -y gettext-base jq netcat procps
 
 # Add Mods
 

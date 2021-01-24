@@ -6,8 +6,8 @@ services:
     container_name: stardew
     environment:
       - "VNC_PASSWORD=nyanyanya"
-      - "DISPLAY_HEIGHT=1000"
-      - "DISPLAY_WIDTH=1400"
+      - "DISPLAY_HEIGHT=640"
+      - "DISPLAY_WIDTH=800"
       ## Always On Server mod
       # Removing this will probably defeat the point of ever using this?
       - ENABLE_ALWAYSONSERVER_MOD=${ENABLE_ALWAYSONSERVER_MOD-true}
