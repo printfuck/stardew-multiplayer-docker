@@ -36,4 +36,8 @@ RUN chmod +x /data/Stardew/Stardew\ Valley/StardewValley && \
     chown -R 1000:1000 /data/Stardew && \
     chmod +x /opt/*.sh
 
+RUN mkdir /etc/services.d/utils && touch /etc/services.d/app/utils.dep
+COPY run /etc/services.d/utils/run 
+RUN chmod +x /etc/services.d/utils/run 
+
 COPY docker-entrypoint.sh /startapp.sh

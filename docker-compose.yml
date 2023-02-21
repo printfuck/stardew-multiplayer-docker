@@ -6,8 +6,8 @@ services:
     container_name: stardew
     environment:
       - "VNC_PASSWORD=nyanyanya"
-      - "DISPLAY_HEIGHT=640"
-      - "DISPLAY_WIDTH=800"
+      - "DISPLAY_HEIGHT=1600"
+      - "DISPLAY_WIDTH=900"
       ## Always On Server mod
       # Removing this will probably defeat the point of ever using this?
       - ENABLE_ALWAYSONSERVER_MOD=${ENABLE_ALWAYSONSERVER_MOD-true}
@@ -23,12 +23,12 @@ services:
       - ALWAYS_ON_SERVER_COPY_INVITE_CODE_TO_CLIPBOARD=${ALWAYS_ON_SERVER_COPY_INVITE_CODE_TO_CLIPBOARD-false}
 
       - ALWAYS_ON_SERVER_FESTIVALS_ON=${ALWAYS_ON_SERVER_FESTIVALS_ON-true}
-      - ALWAYS_ON_SERVER_EGG_HUNT_COUNT_DOWN=${ALWAYS_ON_SERVER_EGG_HUNT_COUNT_DOWN-600}
-      - ALWAYS_ON_SERVER_FLOWER_DANCE_COUNT_DOWN=${ALWAYS_ON_SERVER_FLOWER_DANCE_COUNT_DOWN-600}
-      - ALWAYS_ON_SERVER_LUAU_SOUP_COUNT_DOWN=${ALWAYS_ON_SERVER_LUAU_SOUP_COUNT_DOWN-600}
-      - ALWAYS_ON_SERVER_JELLY_DANCE_COUNT_DOWN=${ALWAYS_ON_SERVER_JELLY_DANCE_COUNT_DOWN-600}
-      - ALWAYS_ON_SERVER_GRANGE_DISPLAY_COUNT_DOWN=${ALWAYS_ON_SERVER_GRANGE_DISPLAY_COUNT_DOWN-600}
-      - ALWAYS_ON_SERVER_ICE_FISHING_COUNT_DOWN=${ALWAYS_ON_SERVER_ICE_FISHING_COUNT_DOWN-600}
+      - ALWAYS_ON_SERVER_EGG_HUNT_COUNT_DOWN=${ALWAYS_ON_SERVER_EGG_HUNT_COUNT_DOWN-60}
+      - ALWAYS_ON_SERVER_FLOWER_DANCE_COUNT_DOWN=${ALWAYS_ON_SERVER_FLOWER_DANCE_COUNT_DOWN-60}
+      - ALWAYS_ON_SERVER_LUAU_SOUP_COUNT_DOWN=${ALWAYS_ON_SERVER_LUAU_SOUP_COUNT_DOWN-60}
+      - ALWAYS_ON_SERVER_JELLY_DANCE_COUNT_DOWN=${ALWAYS_ON_SERVER_JELLY_DANCE_COUNT_DOWN-60}
+      - ALWAYS_ON_SERVER_GRANGE_DISPLAY_COUNT_DOWN=${ALWAYS_ON_SERVER_GRANGE_DISPLAY_COUNT_DOWN-60}
+      - ALWAYS_ON_SERVER_ICE_FISHING_COUNT_DOWN=${ALWAYS_ON_SERVER_ICE_FISHING_COUNT_DOWN-60}
 
       - ALWAYS_ON_SERVER_END_OF_DAY_TIMEOUT=${ALWAYS_ON_SERVER_END_OF_DAY_TIMEOUT-300}
       - ALWAYS_ON_SERVER_FAIR_TIMEOUT=${ALWAYS_ON_SERVER_FAIR_TIMEOUT-1200}
@@ -56,7 +56,7 @@ services:
       ## Remote Control mod
       # Disabling this will remove the ability to automatically sleep and save on shutdown
       - ENABLE_REMOTECONTROL_MOD=${ENABLE_REMOTECONTROL_MOD-true}
-      - REMOTE_CONTROL_EVERYONE_IS_ADMIN=${REMOTE_CONTROL_EVERYONE_IS_ADMIN-false}    # Disable any authorization by just making everyone an admin - useful for private servers where everyone is trusted
+      - REMOTE_CONTROL_EVERYONE_IS_ADMIN=${REMOTE_CONTROL_EVERYONE_IS_ADMIN-true}    # Disable any authorization by just making everyone an admin - useful for private servers where everyone is trusted
       - REMOTE_CONTROL_DEFAULT_ADMINS=${REMOTE_CONTROL_DEFAULT_ADMINS-}   # A list of comma-separated json objects to use as default admins, eg: {id: "123456789", name: "Seb"}, {id: "987654321", name: "Kitz"}
       - REMOTE_CONTROL_SHOULD_ASSIGN_ADMIN_TO_FIRST_CABIN_FARMER=${REMOTE_CONTROL_SHOULD_ASSIGN_ADMIN_TO_FIRST_CABIN_FARMER-true}   # Give the first player that connects admin privileges
 
@@ -136,9 +136,7 @@ services:
     volumes:
       # Saves go here now
       - ./valley_saves:/config/xdg/config/StardewValley/Saves
-      # Should work, not tested
-      - ./backups:/config/xdg/config/StardewValley/Saves/save-backups
-      # The stateful configs should be initially empty files with 777 permission
+      # If you'd like to set an existing savegame before the first start otherwise this file will be edited when starting the first game
       - ./configs/autoload.json:/data/Stardew/Stardew Valley/Mods/AutoLoadGame/config.json
 
       
