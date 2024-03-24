@@ -1,5 +1,5 @@
 # Pull base image.
-FROM jlesage/baseimage-gui:debian-10
+FROM mcr.microsoft.com/dotnet/aspnet:8.0.2-alpine3.18-arm64v8 AS base
 
 # Set the name of the application.
 ENV APP_NAME="StardewValley"
