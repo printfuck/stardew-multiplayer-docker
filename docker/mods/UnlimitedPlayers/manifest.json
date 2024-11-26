@@ -1,9 +1,9 @@
 ﻿{
 	"Author": "Armitxes",
 	"Description": "Remove the maximum player restrictions, build endless cabins.",
-	"Name": "Armi's Unlimited Players",
+	"Name": "Unlimited Players by Armitxes",
 	"EntryDll": "UnlimitedPlayers.dll",
 	"UniqueID": "Armitxes.UnlimitedPlayers",
 	"UpdateKeys": [ "GitHub:Armitxes/StardewValley_UnlimitedPlayers" ],
-	"Version": "2020.2.15"
+	"Version": "2024.4.16"
 }
