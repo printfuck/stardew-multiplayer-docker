@@ -2,12 +2,13 @@
 
 This project aims to autostart a Stardew Valley Multiplayer Server as easy as possible.
 
-## Side Note
+## Important
 
  - Updating to most recent version requires a rebuild: `docker-compose build --no-cache` 
  - Although I'm trying to put out updates, I don't have the time for testing, so I recommend forking and fixing things on your own.
+   - You will always get the most recent version with the fork at https://github.com/norimicry/stardew-multiplayer-docker
+     
  - Ansible and Terraform will not be supported anymore
- - Thanks to the brilliant configuration script from Novex and the genius baseimage from jlesage this now looks a bit better
 
 ## Setup
 
@@ -17,21 +18,6 @@ This project aims to autostart a Stardew Valley Multiplayer Server as easy as po
 git clone https://github.com/printfuck/stardew-multiplayer-docker
 
 docker-compose up
-```
-### Ansible !deprecated!
-
-Create an inventory file with your hosts
-
-```
-ansible -i <your_inventori> playbook.yml
-```
-
-### Terraform (with Hetzner Cloud) !deprecated!
-
-Enter your API Token in `terraform/vars.auto.tfvars` and modify the resource section in `main.tf` to your liking, then run the following script:
-
-```
-./terra.sh
 ```
 
 ## Game Setup
@@ -74,6 +60,8 @@ The game will be pulled from my servers (I'll assume you already own the game - 
 ### Error Messages in Console
 
 Usually you should be able to ignore any message there. If the game doesn't start or any errors appear, you should look for messages like "cannot open display", which would most likely indicate permission errors.
+
+The error log of the SMAPI Loader can be found inside the container at `/config/xdg/config/StardewValley/ErrorLogs/SMAPI-latest.txt`.
 
 ### VNC
 
