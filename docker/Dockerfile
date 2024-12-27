@@ -12,7 +12,7 @@ RUN apt-get install -y wget unzip tar strace mono-complete xterm gettext-base jq
 # Game + ModLoader 1.5.6 3.18.2
 RUN mkdir -p /data/Stardew && \
     mkdir -p /data/nexus && \
-    wget https://eris.cc/Stardew_1.6.14.tar.gz -qO /data/latest.tar.gz && \
+    wget https://eris.cc/Stardew_1.6.15.tar.gz -qO /data/latest.tar.gz && \
     tar xf /data/latest.tar.gz -C /data/Stardew && \
     rm /data/latest.tar.gz 
 
@@ -22,9 +22,9 @@ RUN wget -qO dotnet.tar.gz https://download.visualstudio.microsoft.com/download/
     && rm dotnet.tar.gz \
     && ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet 
 
-RUN wget https://github.com/Pathoschild/SMAPI/releases/download/4.1.6/SMAPI-4.1.6-installer.zip -qO /data/nexus.zip && \
+RUN wget https://github.com/Pathoschild/SMAPI/releases/download/4.1.10/SMAPI-4.1.10-installer.zip -qO /data/nexus.zip && \
     unzip /data/nexus.zip -d /data/nexus/ && \
-    /bin/bash -c "SMAPI_NO_TERMINAL=true SMAPI_USE_CURRENT_SHELL=true echo -e \"2\n\n\" | /data/nexus/SMAPI\ 4.1.6\ installer/internal/linux/SMAPI.Installer --install --game-path \"/data/Stardew/Stardew Valley\"" || :
+    /bin/bash -c "SMAPI_NO_TERMINAL=true SMAPI_USE_CURRENT_SHELL=true echo -e \"2\n\n\" | /data/nexus/SMAPI\ 4.1.10\ installer/internal/linux/SMAPI.Installer --install --game-path \"/data/Stardew/Stardew Valley\"" || :
 
 
 # Add Mods & Scripts
