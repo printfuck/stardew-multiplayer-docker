@@ -2,6 +2,11 @@
 
 This project aims to autostart a Stardew Valley Multiplayer Server as easy as possible.
 
+## Deprecated
+
+*Important*: as I dont have time to maintain this project anymore, I highly recommend to use: 
+https://github.com/stardew-valley-dedicated-server/server
+
 ## Important
 
  - Updating to most recent version requires a rebuild: `docker-compose build --no-cache` 
@@ -70,3 +75,4 @@ Access the game via VNC to initially load or start a pregenerated savegame. You 
 ### Performance
 
 I'd recomend a VPS/Machine with at least four logical CPUs and 4GB Ram, otherwise there will be horrible lags. The minimum configuration I'd consider playable with two to four players would be two logical CPUs and 1GB of Ram.
+https://github.com/stardew-valley-dedicated-server/https://github.com/stardew-valley-dedicated-server/
