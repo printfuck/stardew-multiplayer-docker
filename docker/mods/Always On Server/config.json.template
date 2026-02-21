@@ -6,6 +6,7 @@
   "farmcavechoicemushrooms": true,
   "communitycenterrun": true,
   "timeOfDayToSleep": 2200,
+  "allowSleepBeforeTimeOfDayToSleep": false,
   "lockPlayerChests": true,
   "clientsCanPause": false,
   "copyInviteCodeToClipboard": true,
@@ -24,5 +25,13 @@
   "flowerDanceTimeOut": 120,
   "luauTimeOut": 120,
   "danceOfJelliesTimeOut": 120,
-  "festivalOfIceTimeOut": 120
+  "festivalOfIceTimeOut": 120,
+  "warpCoordForFarm": {
+    "X": 64,
+    "Y": 15
+  },
+  "warpCoordForBed": {
+    "X": 0,
+    "Y": 0
+  }
 }
